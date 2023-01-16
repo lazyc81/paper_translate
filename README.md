@@ -44,4 +44,6 @@ pip install -r requirements.txt
 
 ## 运行
 
-在命令行运行 `uvicorn main:app --host '0.0.0.0' --port 8080 --reload`，其中8080可为想要使用的端口号，运行成功即可访问`http://IP地址:端口号/docs`。
+在命令行运行 `uvicorn main:app --host '0.0.0.0' --port 8080 --reload`，其中8080可为想要使用的端口号，运行成功即可访问`http://IP地址:端口号/docs`。包含两个路由：
+1. translate scientific paper
+2. translate single sentence
