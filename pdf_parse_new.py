@@ -75,8 +75,8 @@ def build_predictors():
     # vila模型
     pdf_predictor = HierarchicalPDFPredictor.from_pretrained("allenai/hvila-block-layoutlm-finetuned-docbank")
     # MFD模型
-    imath_detector = lp.Detectron2LayoutModel(config_path = "/home/lizichao/models/config_mfd.yaml",
-        model_path = "/home/lizichao/models/model_final-2.pth", 
+    imath_detector = lp.Detectron2LayoutModel(config_path = "MFD_config.yaml",
+        model_path = "/path/to/model_final-2.pth", 
         label_map = {1: "Equation"}, extra_config=["MODEL.ROI_HEADS.SCORE_THRESH_TEST", 0.70])
     # 翻译模型
     # translate_tool = EasyNMT('mbart50_en2m', cache_folder = '/home/lizichao/code/unilm/layoutlmv3/examples/object_detection/cache-easynmt')
