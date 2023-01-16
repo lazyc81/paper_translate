@@ -4,7 +4,7 @@ MODEL:
   META_ARCHITECTURE: "VLGeneralizedRCNN"
   PIXEL_MEAN: [ 127.5, 127.5, 127.5 ]
   PIXEL_STD: [ 127.5, 127.5, 127.5 ]
-  WEIGHTS: "/home/lizichao/models/layoutlmv3-publaynet/model_final.pth"
+  WEIGHTS: "/path/to/layoutlmv3-publaynet/model_final.pth"
   BACKBONE:
     NAME: "build_vit_fpn_backbone"
   VIT:
