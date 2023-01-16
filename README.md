@@ -21,8 +21,15 @@ pip install -e .
 
 * 然后完成vila的安装
 ```
+# 回到初始目录
 git clone git@github.com:allenai/VILA.git
 cd VILA 
 pip install -e . # Install the `vila` library 
 pip install -r requirements.txt # Only install the dependencies 
+```
+
+* 完成本项目代码的拷贝与依赖库安装
+```
+# 回到初始目录
+
 ```
