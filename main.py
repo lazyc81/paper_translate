@@ -1,7 +1,7 @@
 # coding:utf-8
 
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '2'
+# os.environ['CUDA_VISIBLE_DEVICES'] = '2'
 from typing import Optional
 import shutil
 from fastapi import FastAPI, UploadFile, File
