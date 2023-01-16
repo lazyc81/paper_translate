@@ -43,9 +43,8 @@ async def translate_scientific_paper(file: UploadFile = File(...)):
     return FileResponse(os.path.join("api_receive_pdfs", 'zh_' + file.filename), media_type = "application/pdf", headers={'Content-Disposition': 'attachment; filename="zh_' + quote(file.filename) + '"'})
 
 
-@app.post("/submitComments/")
-async def submit_comments(comment: str):
-    with open("api_comments.txt", 'a', encoding = 'utf-8') as f:
-        f.write(comment + '\n\n')
-    return "Thanks!"
+@app.post("/translateSentence/")
+async def translate_single_sentence(sentence: str):
+    answer = translate(translate_tool, sentence).replace("\n", ' ')
+    return {'result': answer}
 
