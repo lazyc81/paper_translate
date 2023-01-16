@@ -38,3 +38,6 @@ pip install -r requirements.txt
 
 ## 权重文件下载
 
+* 该项目由4个模型构成，其中2个模型会在初次使用时自动加载权重，2个模型则需要手动下载权重文件
+1. 将 [layoutlmv3-base-finetuned-publaynet](https://huggingface.co/HYPJUDY/layoutlmv3-base-finetuned-publaynet/tree/main) 目录下的所有文件下载于`/path/to/layoutlmv3-base-finetuned-publaynet`中，同时修改cascade_layoutlmv3.yaml文件中的`WEIGHTS: "/path/to/layoutlmv3-base-finetuned-publaynet/model_final.pth"`。此处的`path/to`可修改为本地想要存放权重的路径。
+2. 
