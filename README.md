@@ -40,4 +40,4 @@ pip install -r requirements.txt
 
 * 该项目由4个模型构成，其中2个模型会在初次使用时自动加载权重，2个模型则需要手动下载权重文件
 1. 将 [layoutlmv3-base-finetuned-publaynet](https://huggingface.co/HYPJUDY/layoutlmv3-base-finetuned-publaynet/tree/main) 目录下的所有文件下载于`/path/to/layoutlmv3-base-finetuned-publaynet`中，同时修改cascade_layoutlmv3 copy.yaml文件中的`WEIGHTS: "/path/to/layoutlmv3-base-finetuned-publaynet/model_final.pth"`。此处的`path/to`可修改为本地想要存放权重的路径。
-2. 
+2. 下载 [Math Formula Detection(MFD)](https://www.dropbox.com/s/7xel0i3iqpm2p8y/model_final.pth?dl=1) 文件（可能需要在外网VPN环境下载），放置于`path/to/MFD/`路径下，同时修改[pdf_parse_new.py](pdf_parse_new.py)中的第79行`/path/to/MFD/model_final.pth`。此处的`path/to`可修改为本地想要存放权重的路径。
