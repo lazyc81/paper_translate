@@ -47,7 +47,7 @@ from pdfplumber_extractor import PDFPlumberTokenExtractor    # 修改源码
 img_token_rate = 2.5
 cfg = get_cfg()
 add_vit_config(cfg)
-cfg.merge_from_file('cascade_layoutlmv3 copy.yaml')
+cfg.merge_from_file('cascade_layoutlmv3.yaml')
 cfg.freeze()
 threshold = 0.6
 
