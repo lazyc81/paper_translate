@@ -31,5 +31,10 @@ pip install -r requirements.txt # Only install the dependencies
 * 完成本项目代码的拷贝与依赖库安装
 ```
 # 回到初始目录
-
+git clone https://github.com/lazyc81/paper_translate.git
+cd paper_translate
+pip install -r requirements.txt
 ```
+
+## 权重文件下载
+
