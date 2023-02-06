@@ -214,7 +214,10 @@ def predicting_tokens(pdf_blocks, pdf_tokens, pdf_predictor):
         page_tokens = pdf_tokens[i]
         page_tokens.annotate(blocks = pdf_blocks[i])
         page_data = page_tokens.to_pagedata().to_dict()
-        page_data['labels'] = pdf_predictor.predict(page_data, page_tokens.page_size, return_type = "list")
+        if page_data == None:
+            page_data = {'words':[], 'bbox':[], 'block_ids':[], 'line_ids':[], 'labels':[]}
+        else:
+            page_data['labels'] = pdf_predictor.predict(page_data, page_tokens.page_size, return_type = "list")
         left_index = [j for j in range(len(page_tokens.tokens))]
         # token_groups = {}
         page_all_data = []
