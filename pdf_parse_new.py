@@ -589,6 +589,8 @@ def draw_pdf(pdf_images, pdf_all_data, height, width, output_dir):
                 token_coord = block_data['bbox'][token_index]
                 if re.match("EME_[0-9]+_[0-9]+", block_data['words'][token_index]) != None:
                     img = page_image.crop(tuple([k * img_token_rate for k in token_coord]))
+                    if img.size[0] == 0 or img.size[1] == 0:
+                        img = Image.new('RGB', (1,1), (255, 255, 255))
                     pdf.drawInlineImage(img, token_coord[0], height - token_coord[3] - offset - 1, token_coord[2] - token_coord[0], token_coord[3] - token_coord[1])
                     for i in range(img.size[0]):
                         for j in range(img.size[1]):
@@ -613,6 +615,8 @@ def draw_pdf(pdf_images, pdf_all_data, height, width, output_dir):
             coord = block.coordinates
             if block.type == 'Figure' or block.type == 'Table' or block.type == 'Equation':
                 img = page_image.crop(tuple([k * img_token_rate for k in coord]))
+                if img.size[0] == 0 or img.size[1] == 0:
+                    img = Image.new('RGB', (1,1), (255, 255, 255))
                 img.save(os.path.join(output_dir, block.type + 's/', str(page) + '_' + str(block_index) + '.jpg'), quality = 95)
                 pdf.drawImage(os.path.join(output_dir, block.type + 's/', str(page) + '_' + str(block_index) + '.jpg'), coord[0], height - block.new_coordinates[3], coord[2] - coord[0], coord[3] - coord[1])
                 continue
